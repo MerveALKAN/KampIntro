@@ -1,51 +1,51 @@
 ﻿using System;
 
-namespace ClassIntro
+namespace Metotlar
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-            string adi = "Merve";
-            int yas = 23;
+            string urunAdi = "Elma";
+            double fiyati = 15;
+            string aciklama = "Amasya elması";
 
+            string[] meyveler = new string[] { };
 
-            Kurs kurs1 = new Kurs();
-            kurs1.KursAdi = "C#";
-            kurs1.Egitmen = "Engin Demiroğ";
-            kurs1.IzlenmeOrani = 80;
+            Urun urun1 = new Urun();
+            urun1.Adi = "Elma";
+            urun1.Fiyati = 15;
+            urun1.Aciklama = "Amasya elması";
+            
+            Urun urun2 = new Urun();
+            urun2.Adi = "Karpuz";
+            urun2.Fiyati = 80;
+            urun2.Aciklama = "Diyarbakır karpuzu";
 
+            Urun[] urunler = new Urun[] { urun1, urun2 };
 
-
-            Kurs kurs2 = new Kurs();
-            kurs2.KursAdi = "Python";
-            kurs2.Egitmen = "Kerem Varış";
-            kurs2.IzlenmeOrani = 78;
-
-
-            Kurs kurs3 = new Kurs();
-            kurs3.KursAdi = "Java";
-            kurs3.Egitmen = "Berkay Bilgin";
-            kurs3.IzlenmeOrani = 76;
-
-            // Console.WriteLine(kurs1.KursAdi + " : " + kurs1.Egitmen);
-
-            Kurs[] kurslar = new Kurs[] { kurs1, kurs2, kurs3 };
-
-            foreach (var kurs in kurslar)
+            foreach (Urun urun in urunler)
             {
-                Console.WriteLine(kurs.KursAdi + " : "+kurs.Egitmen);
-            }
-                
-        }
-    }
 
-    class Kurs
-    {
-        public string KursAdi { get; set; }
-        public string Egitmen { get; set; }
-        public int IzlenmeOrani { get; set; }
+                Console.WriteLine(urun.Adi);
+                Console.WriteLine(urun.Fiyati);
+                Console.WriteLine(urun.Aciklama);
+                Console.WriteLine("-----------------------------");
+            }
+
+            Console.WriteLine("--------------Metotlar------------");
+
+
+            //instance - örnek
+            //encapsulation
+            SepetManager sepetManager = new SepetManager();
+            sepetManager.Ekle(urun1);
+            sepetManager.Ekle(urun2);
+
+            sepetManager.Ekle2("Armut", "Taze Armut", 12, 100);
+            sepetManager.Ekle2("Elma", "Yeşil Elma", 12, 50);
+            sepetManager.Ekle2("Karpuz", "Diyarbakır Karpuzu ", 12, 30);
+
+        }
     }
 }

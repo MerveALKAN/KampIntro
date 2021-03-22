@@ -1,43 +1,28 @@
 ﻿using System;
 
-namespace Donguler
+namespace DegerVeReferansTipler
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+
+            int sayi1 = 10;
+            int sayi2 = 30;
+            sayi1 = sayi2;
+            sayi2 = 65;
+            Console.WriteLine("sonuç: " + sayi1);
+            //sayi1 ??
 
 
-            string kurs1 = "Yazılım geliştirici yetiştirme kampı";
-            string kurs2 = "programlamaya başlangıç için temel kurs";
-            string kurs3 = "java";
-            string kurs4 = "python";
-            string kurs5 = "C#";
+            int[] sayilar1 = new int[] { 10, 20, 30 };
+            int[] sayilar2 = new int[] { 100, 200, 300 };
+            sayilar1 = sayilar2;
+            sayilar2[0] = 999;
+            Console.WriteLine(sayilar1[0]);
+            //sayilar1[0] ??
 
-            Console.WriteLine(kurs1); 
-            Console.WriteLine(kurs2); 
-            Console.WriteLine(kurs3); 
-            Console.WriteLine(kurs4);
-            Console.WriteLine(kurs5);
-
-
-            //array -dizi 
-            string [] kurslar = new string[] { "Yazılım geliştirici yetiştirme kampı", 
-                "programlamaya başlangıç için temel kurs" ,
-            "java" , "python", "C#" };
-
-            for (int i = 0; i <kurslar.Length; i++)
-            {
-                Console.WriteLine(kurslar[i]);
-            }
-            Console.WriteLine("For bitti");
-    
-            foreach (string kurs in kurslar)
-                {
-                    Console.WriteLine(kurs);
-                }
-            
-            Console.WriteLine("sayfasonu - footer");
         }
     }
 }

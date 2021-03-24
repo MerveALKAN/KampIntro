@@ -1,27 +1,37 @@
 ﻿using System;
 
-namespace OOP1
+namespace OOP2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Product product1 = new Product();
-            product1.Id = 1;
-            product1.CategoryId = 2;
-            product1.ProductName = "Masa";
-            product1.UnitPrice = 500;
-            product1.UnitInStock = 3;
+            //Merve ALKAN
+            GercekMusteri musteri1 = new GercekMusteri();
+            musteri1.Id = 1;
+            musteri1.MusteriNo = "12345";
+            musteri1.Adi = "Merve";
+            musteri1.Soyadi = "ALKAN";
+            musteri1.TcNo = "12345678910";
+
+            //kodlama.io
+            TuzelMusteri musteri2 = new TuzelMusteri();
+            musteri2.Id = 2;
+            musteri2.MusteriNo = "54321";
+            musteri2.SirketAdi = "Kodlama.io";
+            musteri2.VergiNo = "123456789";
 
 
-            Product product2 = new Product {Id=2, CategoryId=5, UnitInStock=5, ProductName= "Kalem", UnitPrice=35};
+            Musteri musteri3 = new GercekMusteri();
+            Musteri musteri4 = new TuzelMusteri();
 
-            ProductManager productManager = new ProductManager();
-            productManager.Add(product1);
-            Console.WriteLine(product1.ProductName);
-             
-            //int,bool,double... değer tip (atamalar tamamen değer üzerinden olur ve bağlantılar biter)
-            //diziler,class,abstract class,interface... referans tip (atamalar referansın numarası yani bellekteki adresi ile yapılır.)
+            MusteriManager musteriManager = new MusteriManager();
+            musteriManager.Ekle(musteri1);
+            musteriManager.Ekle(musteri2);
+
+            
+            //Gerçek müşteri - Tüzel müşteri iki müşteri birbirlerine benziyorlar diye birbirlerinin yerine kullanılmazlar.
+            //SOLİD
         }
     }
 }

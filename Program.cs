@@ -1,28 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace DegerVeReferansTipler
+namespace Collections
 {
     class Program
     {
+        //array
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //string[] isimler = new string[] { "Merve", "Aylin", "Nilgün", "Melisa" };
+            //Console.WriteLine(isimler[0]);
+            //Console.WriteLine(isimler[1]);
+            //Console.WriteLine(isimler[2]);
+            //Console.WriteLine(isimler[3]);
 
-            int sayi1 = 10;
-            int sayi2 = 30;
-            sayi1 = sayi2;
-            sayi2 = 65;
-            Console.WriteLine("sonuç: " + sayi1);
-            //sayi1 ??
-
-
-            int[] sayilar1 = new int[] { 10, 20, 30 };
-            int[] sayilar2 = new int[] { 100, 200, 300 };
-            sayilar1 = sayilar2;
-            sayilar2[0] = 999;
-            Console.WriteLine(sayilar1[0]);
-            //sayilar1[0] ??
-
+            //isimler = new string[5];
+            //isimler[4] = "Sümeyye";
+            //Console.WriteLine(isimler[4]);
+            //Console.WriteLine(isimler[0]);
+        
+        List<string> isimler2 = new List<string> { "Merve", "Aylin", "Nilgün", "Melisa" };
+        Console.WriteLine(isimler2[0]);
+        Console.WriteLine(isimler2[1]);
+        Console.WriteLine(isimler2[2]);
+        Console.WriteLine(isimler2[3]);
+        isimler2.Add("Sümeyye");
+        Console.WriteLine(isimler2[4]);
+        Console.WriteLine(isimler2[0]);
         }
-    }
+}
 }

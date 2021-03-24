@@ -1,32 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Collections
+namespace OOP1
 {
     class Program
     {
-        //array
         static void Main(string[] args)
         {
-            //string[] isimler = new string[] { "Merve", "Aylin", "Nilgün", "Melisa" };
-            //Console.WriteLine(isimler[0]);
-            //Console.WriteLine(isimler[1]);
-            //Console.WriteLine(isimler[2]);
-            //Console.WriteLine(isimler[3]);
+            Product product1 = new Product();
+            product1.Id = 1;
+            product1.CategoryId = 2;
+            product1.ProductName = "Masa";
+            product1.UnitPrice = 500;
+            product1.UnitInStock = 3;
 
-            //isimler = new string[5];
-            //isimler[4] = "Sümeyye";
-            //Console.WriteLine(isimler[4]);
-            //Console.WriteLine(isimler[0]);
-        
-        List<string> isimler2 = new List<string> { "Merve", "Aylin", "Nilgün", "Melisa" };
-        Console.WriteLine(isimler2[0]);
-        Console.WriteLine(isimler2[1]);
-        Console.WriteLine(isimler2[2]);
-        Console.WriteLine(isimler2[3]);
-        isimler2.Add("Sümeyye");
-        Console.WriteLine(isimler2[4]);
-        Console.WriteLine(isimler2[0]);
+
+            Product product2 = new Product {Id=2, CategoryId=5, UnitInStock=5, ProductName= "Kalem", UnitPrice=35};
+
+            ProductManager productManager = new ProductManager();
+            productManager.Add(product1);
+            Console.WriteLine(product1.ProductName);
+             
+            //int,bool,double... değer tip (atamalar tamamen değer üzerinden olur ve bağlantılar biter)
+            //diziler,class,abstract class,interface... referans tip (atamalar referansın numarası yani bellekteki adresi ile yapılır.)
         }
-}
+    }
 }

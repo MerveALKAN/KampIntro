@@ -1,37 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace OOP2
+namespace OOP3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Merve ALKAN
-            GercekMusteri musteri1 = new GercekMusteri();
-            musteri1.Id = 1;
-            musteri1.MusteriNo = "12345";
-            musteri1.Adi = "Merve";
-            musteri1.Soyadi = "ALKAN";
-            musteri1.TcNo = "12345678910";
+            IKrediManager ihtiyacKrediManager = new IhtiyacKrediManager();
+            IKrediManager tasitKrediManager = new TasitKrediManager();
+            IKrediManager konutKrediManager = new KonutKrediManager();
 
-            //kodlama.io
-            TuzelMusteri musteri2 = new TuzelMusteri();
-            musteri2.Id = 2;
-            musteri2.MusteriNo = "54321";
-            musteri2.SirketAdi = "Kodlama.io";
-            musteri2.VergiNo = "123456789";
+            ILoggerService databaseLoggerService = new DatabaseLoggerService();
+            ILoggerService fileLogerService = new FileLoggerService();
 
+            List<ILoggerService> loggers = new List<ILoggerService> { new SmsLoggerService(), new FileLoggerService() };
 
-            Musteri musteri3 = new GercekMusteri();
-            Musteri musteri4 = new TuzelMusteri();
+            BasvuruManager basvuruManager = new BasvuruManager();
+            basvuruManager.BasvuruYap(new EsnafKredisiManager(),loggers);
 
-            MusteriManager musteriManager = new MusteriManager();
-            musteriManager.Ekle(musteri1);
-            musteriManager.Ekle(musteri2);
+            //IhtiyacKrediManager,TasitKrediManager,KonutKrediManager yerine IKrediManager kullansaydık bile aynı sonuç gelirdi.
+            //Çünkü interfacelerde o interfaceyi implement eden classın referans numarasını tutabiliyor.
 
-            
-            //Gerçek müşteri - Tüzel müşteri iki müşteri birbirlerine benziyorlar diye birbirlerinin yerine kullanılmazlar.
-            //SOLİD
+            List<IKrediManager> krediler = new List<IKrediManager>() {ihtiyacKrediManager, tasitKrediManager };
+            //basvuruManager.KrediOnBilgilendirmesiYap(krediler);
+
+        // interfaceleri birbirinin alternatifi olan ama kod içerikleri farklı olan durumlar için kullanırız.
+        
         }
+
+
+
     }
 }
